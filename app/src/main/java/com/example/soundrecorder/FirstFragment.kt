@@ -46,17 +46,17 @@ class FirstFragment : Fragment() {
                         toastRecordingEnded.cancel()
                     toastRecordingStarted.show();
                 }
-
                 MotionEvent.ACTION_UP   -> {
                         toastRecordingStarted.cancel()
                     toastRecordingEnded.show();
+                    findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
                 }
             }
             false
         })
         /**
         binding.buttonRecord.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+
         }**/
     }
 

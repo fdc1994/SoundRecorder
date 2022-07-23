@@ -9,19 +9,26 @@
 
     <TextView
         android:id="@+id/textview_first"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/record"
-      android:layout_margin="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
         android:textAlignment="center"/>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_record"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         app:icon="@drawable/ic_baseline_fiber_manual_record_24"
         app:iconTint="#B30"
- app:iconSize="150dp"
+        app:iconSize="150dp"
         android:insetLeft="0dp"
         android:insetTop="0dp"
         android:insetRight="0dp"
@@ -32,4 +39,15 @@
         android:layout_gravity="center"
 
         />
+    <TextView
+        android:id="@+id/textview_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/record2"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
 </androidx.appcompat.widget.LinearLayoutCompat>
