@@ -33,11 +33,11 @@ class FirstFragment : Fragment() {
     private var isRecording: Boolean = false;
     private var seconds: Int = 0;
     private var path: String? = null;
-    private val requestMultiplePermissions = registerForActivityResult(
+    val requestMultiplePermissions = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
     ) { permissions ->
         permissions.entries.forEach {
-            if(it.value == true && isAdded) Toast.makeText(requireContext(),R.string.permission_success, Toast.LENGTH_SHORT).show()
+
         }
     }
 
@@ -106,11 +106,10 @@ class FirstFragment : Fragment() {
     }
 
     private fun requestRecordingPermission() {
-        requestMultiplePermissions.launch(
-            arrayOf(
-                android.Manifest.permission.RECORD_AUDIO
-            )
-        )
+        ActivityCompat.requestPermissions(requireActivity(),
+                                          arrayOf(android.Manifest.permission.RECORD_AUDIO),
+                                          REQUEST_AUDIO_PERMISSION_CODE)
+
     }
 
     override fun onDestroyView() {
@@ -118,6 +117,14 @@ class FirstFragment : Fragment() {
         _binding = null
     }
 
-
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        if (permissions[0] == android.Manifest.permission.RECORD_AUDIO && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(requireContext(), R.string.permission_success, Toast.LENGTH_SHORT).show()
+        }
+        else {
+            Toast.makeText(requireContext(), R.string.permission_failed, Toast.LENGTH_SHORT).show()
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+    }
 
 }
