@@ -14,6 +14,9 @@
     <string name="record2">Lift button to stop recording.</string>
     <string name="recording_started">Recording…</string>
     <string name="recording_ended">Recording Ended.</string>
+    <string name="no_recording_permission">Please ensure you have granted recording permission.</string>
+    <string name="permission_success">Permission granted successfully</string>
+    <string name="permission_failed">Permission not granted, please try again.</string>
     <string name="Play">Play</string>
     <string name="Pause">Pause</string>
     <string name="Stop">Stop</string>
